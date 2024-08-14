@@ -26,8 +26,32 @@ Depois de todas as informações terem sido inseridas, o sistema deverá exibir 
 Os campos em [ ] devem ser alterados pelas informações que forem inseridas pelos usuários.
  */
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
+        System.out.println("Por favor, digite o numero da sua agencia!");
+        String agencia = scanner.next();
+
+        System.out.println("Agora, digite o numero da sua conta!");
+        int conta = scanner.nextInt();
+
+        System.out.println("Em seguida, digite o nome do titular!");
+        String titular = scanner.next();
+
+        System.out.println("O numero da seu saldo é:");
+        double saldo = scanner.nextDouble();
+
+        // imprimido os dados obtidos pelo usuario
+
+        System.out.println(
+                "Ola, cliente " + titular + "" + ",obrigado por abrir uma conta em nosso banco, sua agencia é "
+                        + agencia
+                        + "" + ",conta " + conta + " e seu saldo " + saldo + ", já está disponivel para saque.");
+
     }
+
 }
